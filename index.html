@@ -1,31 +1,105 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Impact Game</title>
-	<style type="text/css">
-		html,body {
-			background-color: #333;
-			color: #fff;
-			font-family: helvetica, arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			font-size: 12pt;
-		}
-		
-		#canvas {
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			margin: auto;
-		}
-	</style>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Template &middot; Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Alain Fontaine">
+
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="lib/impact/impact.js"></script>
 	<script type="text/javascript" src="lib/game/main.js"></script>
-</head>
-<body>
-	<canvas id="canvas"></canvas>
-</body>
+    <style type="text/css">
+    #canvas {
+			
+			margin: auto;
+		}
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right" style="margin-top: 10px">
+          <li class="span2">
+          	<span id="score" class="badge"></span> points
+          </li>
+          <li class="span2">
+          	Level <span id="level" class="badge"></span>
+          </li>
+          <li class="span2">
+          	<div class="progress">
+			  <div id="life" class="bar" style="width: 100%;"></div>
+			</div>
+          </li>
+        </ul>
+        <h3 class="muted">Helicopter Game</h3>
+      </div>
+
+      <hr>
+
+      <canvas id="canvas"></canvas>
+
+    </div> 
+
+    <div id="gameover" class="modal hide fade" data-backdrop="static">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	    <h3>Game Over</h3>
+	  </div>
+	  <div class="modal-body">
+
+	    <p style="text-align: center">You got to level:<h1 id="final_level" style="text-align: center;"></h1></p>
+<p style="text-align: center">with the score:<h1 id="final_score" style="text-align: center;"></h1></p>
+
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" class="btn btn-primary keep_trying" data-dismiss="modal">Keep trying</a>
+	  </div>
+	</div>
+
+  </body>
 </html>
+
